@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "countrydialcode",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kuttz/CountryDialCode",
+      "state" : {
+        "revision" : "d467eb0457e264bea038f176c2a599410807464b",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
