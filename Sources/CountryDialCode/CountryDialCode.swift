@@ -8,7 +8,7 @@ public struct CountryDialCode {
     }
     
     public static func getAllCodes() -> [CountryCode] {
-        return Bundle.countryDialCode.decode(Array<CountryCode>.self, from: "CountryCodes.json")
+        return Bundle.module.decode(Array<CountryCode>.self, from: "CountryCodes.json")
     }
     
     public static func current() -> CountryCode? {
