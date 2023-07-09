@@ -7,8 +7,6 @@
 
 import Foundation
 
-private class CurrentBundleFinder {}
-
 extension Bundle {
     
     func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
@@ -38,17 +36,4 @@ extension Bundle {
             fatalError("Failed to decode \(file) from bundle: \(error.localizedDescription)")
         }
     }
-}
-
-
-
-// The custom bundle locator code is needed to work around a bug in Xcode
-// where SwiftUI previews in an SPM module will crash if they try to use
-// resources in another SPM module that are loaded using the synthesized
-// Bundle.module accessor.
-//
-extension Bundle {
-    static var countryDialCode: Bundle = {
-        return Bundle(for: CurrentBundleFinder.self)
-    }()
 }
